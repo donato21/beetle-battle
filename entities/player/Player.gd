@@ -5,9 +5,14 @@ var vel = Vector2.ZERO
 var vel_rot = Vector2.ZERO
 var acc = Vector2.ZERO
 
-const speed = 70
+const speed = 50
 const max_speed = 250
 const friction = 0.2
+
+var damage = 10
+var attack_speed = .7
+var attack_duration = .1
+var armor_piercing = 2
 
 func _ready():
 	var timer = Timer.new()
@@ -42,14 +47,9 @@ func timeout():
 	#print(vel)
 	pass
 
-func _input(_event):
-	pass
+func _input(event):
+	if event.is_action_pressed("attack"):
+		$WeaponNode.get_child(0).attack()
 
-func on_hit():
-	pass
-
-func attack():
-	pass
-
-func add_points():
-	pass
+func hit():
+	print("Player: Yeouch!!!")

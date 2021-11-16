@@ -47,6 +47,12 @@ attack={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Hit Boxes"
+2d_physics/layer_2="Attack Areas"
+2d_physics/layer_3="Bug Colliders"
+
 [physics]
 
 common/enable_pause_aware_picking=true
