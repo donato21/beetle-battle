@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
 var predators = []
+var vel = Vector2.ZERO
+var speed = 150
+var friction = 0.3
 
 func _process(delta):
 	if predators.size() <= 0:
@@ -17,6 +20,7 @@ func _on_DetectArea_body_exited(body):
 		predators.erase(body)
 
 func idle():
+	vel = move_and_slide(vel.linear_interpolate(Vector2.ZERO, friction))
 	pass
 
 func run():
@@ -26,9 +30,8 @@ func run():
 	for target in targets:
 		if target[1] < targets.front()[1]:
 			targets.push_front(targets.pop_at(targets.find(target)))
-	var target_dir = targets.front()[0].rotation
-	rotation = lerp(rotation, target_dir, 0.3)
-	move_and_slide((Vector2.UP * 100).rotated(rotation))
+	rotation = position.angle_to_point(targets.front()[0].position) + 0.5 * PI
+	vel = move_and_slide((Vector2.UP * speed).rotated(rotation))
 
 func hit():
 	print("Aphid("+name+"): YEOUCH!!!")

@@ -11,7 +11,7 @@ radius = 7.0
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 58.0
+radius = 100.0
 
 [node name="Aphid" type="KinematicBody2D"]
 collision_layer = 4
