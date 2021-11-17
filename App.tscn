@@ -14,3 +14,18 @@ position = Vector2( 313, 228 )
 
 [node name="Aphid" parent="." instance=ExtResource( 3 )]
 position = Vector2( 678, 264 )
+
+[node name="Aphid2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 624, 219 )
+
+[node name="Aphid3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 717, 204 )
+
+[node name="Aphid4" parent="." instance=ExtResource( 3 )]
+position = Vector2( 619, 293 )
+
+[node name="Aphid5" parent="." instance=ExtResource( 3 )]
+position = Vector2( 760, 311 )
+
+[node name="Aphid6" parent="." instance=ExtResource( 3 )]
+position = Vector2( 766, 238 )
